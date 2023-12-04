@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <style>
+
+        *{
+            color: white;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(29, 29, 29);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(22, 22, 22);
+            padding: 10px;
+            text-align: center;
+        }
+
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .profile {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+
+
+        p {
+            margin: 0 0 10px;
+        }
+
+        @media (max-width: 600px) {
+            .profile {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+        .link-stil {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
+            border-width: 5px;
+            text-decoration: none;
+            color: rgb(190, 0, 0);
+            margin: auto;
+            transform-origin: center;
+        }
+
+        .link-stil:hover {
+            background-color: #f0f0f0;
+            color: rgb(190, 0, 0);
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .link-stil:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+        img{
+            margin: 1rem;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        img:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+        .ppp:hover {
+            transform: scale(1.025);
+            transition: transform 0.3s;
+        }
+
+        .ppp:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Moj Profil</h1>
+    </header>
+
+    <section>
+        <div class="profile">
+            <img src="ja.png" alt="Vaša slika">
+            <div class="profile-info">
+                <h2 class="ppp">Nikola Jovanovic</h2>
+                <p >Godina rođenja: 2005</p>
+                <p >Škola: PMF Softverski Inzenjering</p>
+                <p >Zvanje: Softverski inzenjer</p>
+                <p >Rodjen sam u Kragujevcu, Srbija. U tom gradu idalje zivim, a tu sam se i skolovao. Specijalizovan sam da radim na front-end-u i back-end-u sajta. Takodje sam izucio i dosta programa za rastersko i vektorsko editovanje slika i kreiranje logotipa, kao sto su na primer: PhotoShop, Inscape, Gimp. Sredjivanje video zapisa i editovanje istih mi nije problem, obicno koristim programe kao sto su: Blender, Shotcut i Open Shot. Editovanje zvuka i pravljenje muzike radim u programima: FL Studio, i open shot. Imam veliko interesovanje za unapredjivanje mog znanja, i spreman sam da se posvetim ozbiljnim projektima.</p>
+            </div>
+        </div>
+    </section>
+
+    <a class="link-stil" href="index.html">Nazad</a>
+
+</body>
+</html>

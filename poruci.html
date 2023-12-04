@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poruci</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(29, 29, 29);
+            color: white;
+        }
+
+        .link-stil {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
+            border-width: 5px;
+            text-decoration: none;
+            color: rgb(190, 0, 0);
+            margin: auto;
+            transform-origin: center;
+        }
+
+        .link-stil:hover {
+            background-color: #f0f0f0;
+            color: rgb(190, 0, 0);
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .link-stil:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+        .pr:hover {
+            transform: scale(1.04);
+            transition: transform 0.3s;
+        }
+
+        .pr:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+
+        }
+        #container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .column {
+            border: 0.3rem solid gray; 
+            border-radius: 1rem;
+            padding: 10px;
+            width: 45%;
+        }
+
+        button {
+            display: block;
+            margin: 5px auto;
+            padding: 5px 10px;
+            background-color: gray;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #empty-cart-button,
+        #buy-all-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: gray;
+            border: 0.3rem solid gray; 
+            border-radius: 1rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #empty-cart-button1,
+        #buy-all-button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: gray;
+            border: 0.3rem solid gray; 
+            border-radius: 1rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .opcija {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .Porudzbina-item {
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .logotip {
+            background-color: #fddbbf;
+        }
+
+        .programiranje {
+            background-color: #EBE3D5;
+        }
+
+        .animiranje {
+            background-color: #B0A695;
+        }
+
+        header {
+            background-color: rgb(22, 22, 22);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .editovanje {
+            background-color: #776B5D;
+        }
+
+        .dugme-container {
+            margin-left: auto; 
+        }
+    </style>
+</head>
+<body >
+    <header>  <h1>Poruci</h1> </header>
+
+<div id="container">
+    <div id="available-column" class="column">
+        <h2>Proizvodi</h2>
+    </div>
+    <div id="cart-column" class="column">
+        <h2>Porudzbina</h2>
+    </div>
+</div>
+
+<button class="pr" id="empty-cart-button">Kupi</button>
+<button class="pr" id="buy-all-button">Kupi sve</button>
+<button class="pr" id="empty-cart-button1">Isprazni korpu</button>
+
+<script>
+
+    var namirnice = [
+        { id: 2, ime: 'Dizajniranje logotipa po zelji.', tip: 'logotip' },
+        { id: 3, ime: 'Raznovrsni problemi kodiranja.', tip: 'programiranje' },
+        { id: 4, ime: 'Krace video animacije i gifovi.', tip: 'animiranje' },
+        { id: 5, ime: 'Editovanje slika i video zapisa.', tip: 'editovanje' }
+    ];
+
+    function prikaziNamirnice(kolonaId, namirnice) {
+        var kolona = document.getElementById(kolonaId);
+        kolona.innerHTML = '<h2>' + (kolonaId === 'available-column' ? 'Proizvodi' : 'Porudzbina') + '</h2>';
+
+        namirnice.forEach(function (opcija) {
+            var element = document.createElement('div');
+            element.className = kolonaId === 'cart-column' ? 'Porudzbina-item' : 'opcija ' + opcija.tip.toLowerCase();
+            var nazivNamirnice = document.createElement('span');
+            nazivNamirnice.innerHTML = opcija.ime + ' - ' + opcija.tip;
+            element.appendChild(nazivNamirnice);
+
+            var dugmeContainer = document.createElement('div');
+            dugmeContainer.className = 'dugme-container';
+            var dugme = document.createElement('button');
+            dugme.innerText = 'Dodaj u korpu';
+            dugme.addEventListener('click', function () {
+                prebaciUKorpu(opcija);
+            });
+          
+            dugmeContainer.appendChild(dugme);
+
+            element.appendChild(dugmeContainer);
+
+            kolona.appendChild(element);
+        });
+    }
+
+    function prebaciUKorpu(opcija) {
+        var availableColumn = document.getElementById('available-column');
+        var cartColumn = document.getElementById('cart-column');
+
+        cartColumn.appendChild(kreirajElement(opcija, true));
+    }
+
+    function kupiSve() {
+        namirnice.forEach(function (opcija) {
+            prebaciUKorpu(opcija);
+        });
+    }
+
+    function kreirajElement(opcija, isInCart) {
+        var element = document.createElement('div');
+        element.innerHTML = opcija.ime;
+
+        if (!isInCart) {
+            var dugmeContainer = document.createElement('div');
+            dugmeContainer.className = 'dugme-container'; 
+            var dugme = document.createElement('button');
+            dugme.innerText = 'Dodaj u korpu';
+            dugme.addEventListener('click', function () {
+                prebaciUKorpu(opcija);
+            });
+            dugmeContainer.appendChild(dugme);
+
+            element.appendChild(dugmeContainer);
+        }
+
+        return element;
+    }
+
+    document.getElementById('buy-all-button').addEventListener('click', kupiSve);
+
+    document.getElementById('empty-cart-button').addEventListener('click', function () {
+        var cartColumn = document.getElementById('cart-column');
+        cartColumn.innerHTML = '<h2>Porudzbina</h2>';
+    });
+    document.getElementById('empty-cart-button1').addEventListener('click', function () {
+        var cartColumn = document.getElementById('cart-column');
+        cartColumn.innerHTML = '<h2>Porudzbina</h2>';
+    });
+
+    prikaziNamirnice('available-column', namirnice);
+</script>
+<a class="link-stil" style="margin-top: 1.5rem;" href="index.html">Nazad</a>
+
+</body>
+</html>

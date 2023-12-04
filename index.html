@@ -13,15 +13,22 @@
             margin: 0;
             padding: 0;
             background-color: rgb(29, 29, 29);
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            height: 100vh; 
         }
-    
+
         nav {
-            background-color: transparent;
+            background-color: rgb(22, 22, 22);
             overflow: hidden;
             display: flex;
             justify-content: space-around;
+            position: fixed;
+            width: 100%;
+            top: 0;
         }
-    
+
         nav a {
             flex-grow: 1;
             display: block;
@@ -31,23 +38,133 @@
             text-decoration: none;
             transition: background-color 0.3s;
         }
-    
+
         nav a:hover {
             background-color: #ddd;
             color: black;
         }
+
+        p {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            margin-top: 50px;
+        }
+
+        .p1 {
+            color: rgb(255, 255, 255);
+            font-size: 80px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 0; 
+        }
+
+        .p2 {
+            color: rgb(214, 0, 0);
+            font-size: 80px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 0; 
+        }
+
+        .p3 {
+            color: rgb(0, 32, 214);
+            font-size: 80px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 0; 
+        }
+
+
+        .uvod {
+            display: flex;
+            justify-content: center;
+            margin: 2rem;
+        }
+
+        .uvod1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        h5 {
+            font-size: 45px;
+            color: white;
+        }
+
+        h6 {
+            font-size: 30px;
+            color: gray;
+        }
+
+        .uvod1 {
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            height: 100vh; 
+        }
+
+        .card {
+            width: 18rem;
+            text-align: center; 
+        }
+
+        .ppp:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .ppp:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+        .pp:hover{
+            color: rgb(214, 0, 0);
+        }
+        .pp:not(:hover) {
+            color: white;
+            
+        }
+        
+
+        .pppp:hover{
+            color: rgb(0, 32, 214);
+        }
+        .pppp:not(:hover) {
+            color: gray;
+            
+        }
+
     </style>
 
 </head>
 
 <body>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#interesovanja">Interesovanja</a>
-        <a href="#projekti">Projekti</a>
-        <a href="#profil">Profil</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="index.html"><h1>Home</h1></a>
+        <a href="interesovanja.html"><h1>Interesovanja</h1></a>
+        <a href="projekti1.html"><h1>Projekti</h1></a>
+        <a href="poruci.html"><h1>Poruci</h1></a>
+        <a href="profil.html"><h1>Profil</h1></a>
+        <a href="kontakt.html"><h1>Kontakt</h1></a>
     </nav>
+    
 
+    <div class="uvod">
+        <p class="p1 ppp">Zdravo<p class="p2">.</p></p>
+    </div>
+    <div class="uvod">
+        <p class="p1 ppp">Ja sam Nikola<p class="p3">.</p></p>
+    </div>
+
+
+
+    <div class="uvod1 card">
+        <div class="card-body">
+            <h5 class="card-title ppp pp">O meni</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary ppp pppp"> <i> Ko sam ja? </i> </h6>
+            <p class="card-text ppp">Profesionalni dizajner sa fokusom na front-end web razvoj. Kroz kreativnost i preciznost, transformišem ideje u vizuelno atraktivne i funkcionalne sajtove. Iskusan u kreiranju i sredjivanju slika i video zapisa koji unapređuju korisničko iskustvo. Spreman za izazove u digitalnom prostoru.</p>
+        </div>
+    </div>
 </body>
+
 </html>

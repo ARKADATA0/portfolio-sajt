@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Responsivne Kartice sa Bootstrap</title>
+    <style>
+
+        *{
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(29, 29, 29);
+            margin: 0;
+            padding: 0;
+            background-color: rgb(29, 29, 29);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgb(22, 22, 22);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .link-stil {
+            display: flex;
+            justify-content: center;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            border-radius: 1rem;
+            border-width: 5px;
+            text-decoration: none;
+            color: rgb(190, 0, 0);
+            margin: auto;
+            transform-origin: center;
+        }
+
+        .link-stil:hover {
+            background-color: #f0f0f0;
+            color: rgb(190, 0, 0);
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .link-stil:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+            
+        }
+
+        
+        p {
+            margin: 0 0 10px;
+        }
+
+        .card{
+            border-radius: 1rem;
+            border-width: 5px;
+            border-color: gray;
+            background-color: rgb(22, 22, 22);
+            height: 500px;
+            width: 350;
+            margin: 1rem;
+            transition: border-color 0.3s ease, background-color 0.3s ease;
+            transform-origin: center center;
+        }
+
+        .card:hover {
+            border-color: lime; 
+            background-color: #333; 
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .card:not(:hover) {
+            transform: scale(1); 
+            transition: transform 0.5s;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>  <h1>Projekti</h1> </header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat1.png" class="card-img-top" alt="Slika 1">
+                <div class="card-body">
+                    <h5 class="card-title">LiChess</h5>
+                    <p>Nas tim je napravio odlicnu platformu preko koje ljudi sirom sveta mogu da igraju sah, da se upoznaju i druze.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat2.png" class="card-img-top" alt="Slika 2">
+                <div class="card-body">
+                    <h5 class="card-title">Animiranje crtanih filmova</h5>
+                    <p class="card-text">Kao animator crtanih filmova, moj posao je bio kreiranje pokretnih slika i priča putem animacije.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat3.png" class="card-img-top" alt="Slika 3">
+                <div class="card-body">
+                    <h5 class="card-title">Desinger</h5>
+                    <p class="card-text">Kreiranje dizajna, automobilskih delova poput branika, spojlera, haube i drugih, koji ce biti aerodinamicno fukncionalni i upotrebljivi.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat4.png" class="card-img-top" alt="Slika 3">
+                <div class="card-body">
+                    <h5 class="card-title">Studio Trigger - animator</h5>
+                    <p class="card-text">Kao animator crtanih filmova, moj posao je bio kreiranje pokretnih slika i priča putem animacije.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat5.png" class="card-img-top" alt="Slika 3">
+                <div class="card-body">
+                    <h5 class="card-title">ABT - programer</h5>
+                    <p class="card-text">Programiranje elektricnog motora i mapiranje elektromotora na sportsim automobilima.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="card">
+                <img src="slike/projekat6.png" class="card-img-top" alt="Slika 3">
+                <div class="card-body">
+                    <h5 class="card-title">Logo dizajner</h5>
+                    <p class="card-text">Vektorsko i rastersko dizajniranje logotipa.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="link-stil" href="index.html">Nazad</a>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
